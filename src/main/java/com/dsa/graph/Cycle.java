@@ -43,15 +43,6 @@ public class Cycle {
 
 
 
-void addUndirectedEdge(int u, int v) {
-    adjList.get(u).add(v);
-    adjList.get(v).add(u);
-}
-
-void addDirectedEdge(int u, int v) {
-    adjList.get(u).add(v);
-}
-
     public static boolean hasCycleUndirected(Graph graph) {
         boolean[] visited = new boolean[graph.vertices];
         for (int i = 0; i < graph.vertices; i++) {

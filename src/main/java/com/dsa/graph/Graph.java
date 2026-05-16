@@ -21,6 +21,14 @@ public class Graph {
         adjList.get(destination).add(source);
     }
 
+    public void addUndirectedEdge(int source, int destination) {
+        addEdge(source, destination);
+    }
+
+    public void addDirectedEdge(int source, int destination) {
+        adjList.get(source).add(destination);
+    }
+
     void printGraph() {
         for (int i = 0; i < vertices; i++) {
             System.out.print(i + " -> ");
