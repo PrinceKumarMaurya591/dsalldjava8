@@ -1,104 +1,117 @@
 package com.dsa.graph;
 
-import java.util.ArrayList;
-import java.util.List;
+//Cycle detection in a directed and undirected graph 
+// 1. For undirected graph, we can use DFS to detect a cycle. 
+// We need to keep track of visited nodes and the parent node. 
+// If we encounter a visited node that is not the parent, then there is a cycle.
+// 2. For directed graph, we can use DFS to detect a cycle. 
+// We need to keep track of visited nodes and the recursion stack. 
+// If we encounter a visited node that is in the recursion stack, then there is a cycle.
+
 
 public class Cycle {
 
+    
+
+
     public static void main(String[] args) {
-        int vertices = 4;
 
-        List<List<Integer>> undirectedGraph = createGraph(vertices);
-        addUndirectedEdge(undirectedGraph, 0, 1);
-        addUndirectedEdge(undirectedGraph, 1, 2);
-        addUndirectedEdge(undirectedGraph, 2, 0);
-        addUndirectedEdge(undirectedGraph, 2, 3);
+    // Undirected Graph
+    Graph undirected = new Graph(4);
 
-        System.out.println("Undirected graph has cycle: " + hasCycleInUndirectedGraph(undirectedGraph));
+    undirected.addUndirectedEdge(0, 1);
+    undirected.addUndirectedEdge(1, 2);
+    undirected.addUndirectedEdge(2, 0);
+    undirected.addUndirectedEdge(2, 3);
 
-        List<List<Integer>> directedGraph = createGraph(vertices);
-        addDirectedEdge(directedGraph, 0, 1);
-        addDirectedEdge(directedGraph, 1, 2);
-        addDirectedEdge(directedGraph, 2, 3);
-        addDirectedEdge(directedGraph, 3, 1);
+    System.out.println("Cycle in Undirected Graph: "
+            + hasCycleUndirected(undirected));
 
-        System.out.println("Directed graph has cycle: " + hasCycleInDirectedGraph(directedGraph));
-    }
 
-    private static List<List<Integer>> createGraph(int vertices) {
-        List<List<Integer>> graph = new ArrayList<>();
-        for (int i = 0; i < vertices; i++) {
-            graph.add(new ArrayList<>());
-        }
-        return graph;
-    }
+    // Directed Graph
+    Graph directed = new Graph(4);
 
-    private static void addUndirectedEdge(List<List<Integer>> graph, int source, int destination) {
-        graph.get(source).add(destination);
-        graph.get(destination).add(source);
-    }
+    directed.addDirectedEdge(0, 1);
+    directed.addDirectedEdge(1, 2);
+    directed.addDirectedEdge(2, 0);
+    directed.addDirectedEdge(2, 3);
 
-    private static void addDirectedEdge(List<List<Integer>> graph, int source, int destination) {
-        graph.get(source).add(destination);
-    }
+    System.out.println("Cycle in Directed Graph: "
+            + hasCycleDirected(directed));
+}
 
-    public static boolean hasCycleInUndirectedGraph(List<List<Integer>> graph) {
-        boolean[] visited = new boolean[graph.size()];
 
-        for (int vertex = 0; vertex < graph.size(); vertex++) {
-            if (!visited[vertex] && hasUndirectedCycle(graph, vertex, -1, visited)) {
-                return true;
+
+
+void addUndirectedEdge(int u, int v) {
+    adjList.get(u).add(v);
+    adjList.get(v).add(u);
+}
+
+void addDirectedEdge(int u, int v) {
+    adjList.get(u).add(v);
+}
+
+    public static boolean hasCycleUndirected(Graph graph) {
+        boolean[] visited = new boolean[graph.vertices];
+        for (int i = 0; i < graph.vertices; i++) {
+            if (!visited[i]) {
+                if (dfsUndirected(graph, i, visited, -1)) {
+                    return true;
+                }
             }
         }
-
         return false;
     }
 
-    private static boolean hasUndirectedCycle(List<List<Integer>> graph, int vertex, int parent, boolean[] visited) {
+    private static boolean dfsUndirected(Graph graph, int vertex, boolean[] visited, int parent) {
         visited[vertex] = true;
-
-        for (Integer neighbor : graph.get(vertex)) {
+        for (Integer neighbor : graph.adjList.get(vertex)) {
             if (!visited[neighbor]) {
-                if (hasUndirectedCycle(graph, neighbor, vertex, visited)) {
+                if (dfsUndirected(graph, neighbor, visited, vertex)) {
                     return true;
                 }
             } else if (neighbor != parent) {
                 return true;
             }
         }
-
         return false;
     }
 
-    public static boolean hasCycleInDirectedGraph(List<List<Integer>> graph) {
-        boolean[] visited = new boolean[graph.size()];
-        boolean[] recursionStack = new boolean[graph.size()];
 
-        for (int vertex = 0; vertex < graph.size(); vertex++) {
-            if (!visited[vertex] && hasDirectedCycle(graph, vertex, visited, recursionStack)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private static boolean hasDirectedCycle(List<List<Integer>> graph, int vertex, boolean[] visited,
-            boolean[] recursionStack) {
-        visited[vertex] = true;
-        recursionStack[vertex] = true;
-
-        for (Integer neighbor : graph.get(vertex)) {
-            if (!visited[neighbor]) {
-                if (hasDirectedCycle(graph, neighbor, visited, recursionStack)) {
+    public static boolean hasCycleDirected(Graph graph) {
+        boolean[] visited = new boolean[graph.vertices];
+        boolean[] recStack = new boolean[graph.vertices];
+        for (int i = 0; i < graph.vertices; i++) {
+            if (!visited[i]) {
+                if (dfsDirected(graph, i, visited, recStack)) {
                     return true;
                 }
-            } else if (recursionStack[neighbor]) {
+            }
+        }
+        return false;
+    }
+
+
+    private static boolean dfsDirected(Graph graph, int vertex, boolean[] visited, boolean[] recStack) {
+        visited[vertex] = true;
+        recStack[vertex] = true;
+        for (Integer neighbor : graph.adjList.get(vertex)) {
+            if (!visited[neighbor]) {
+                if (dfsDirected(graph, neighbor, visited, recStack)) {
+                    return true;
+                }
+            } else if (recStack[neighbor]) {
                 return true;
             }
         }
-
-        recursionStack[vertex] = false;
+        recStack[vertex] = false;
         return false;
     }
+
+
+
+
+   
+
 }
