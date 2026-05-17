@@ -1,3 +1,4 @@
+/media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/interview/Java8InterviewQuestions.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/array/SearchInRotatedSortedArray.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/patterns/PrefixSum.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/array/MergeSortedArray.java
@@ -9,6 +10,7 @@
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/dp/HouseRobber.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/recursion/SubsetsII.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/string/ValidParentheses.java
+/media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/interview/JavaCoreInterviewQuestions.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/patterns/MergeIntervals.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/tree/TreeNode.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/designpatterns/structural/AdapterPattern.java
@@ -53,10 +55,12 @@
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/stack/ValidParentheses.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/graph/Graph.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/graph/SurroundedRegions.java
+/media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/interview/AWSInterviewQuestions.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/graph/WallsAndGates.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/linkedlist/MergeKSortedLists.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/patterns/BinarySearch.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/designpatterns/behavioral/InterpreterPattern.java
+/media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/interview/SystemDesignInterviewQuestions.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/stack/MinStack.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/dp/MaximumProductSubarray.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/tree/TreeOperations.java
@@ -83,6 +87,7 @@
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/dp/PartitionEqualSubsetSum.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/string/LongestSubstringWithoutRepeatingCharacters.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/array/MedianOfTwoSortedArrays.java
+/media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/interview/SpringBootInterviewQuestions.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/array/ProductOfArrayExceptSelf.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/graph/FindTheCelebrity.java
 /media/prince-kumar-maurya/Work_Data/DSALLDJAV8/dsalldjava8/src/main/java/com/dsa/array/ValidSudoku.java
