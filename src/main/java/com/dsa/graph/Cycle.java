@@ -43,18 +43,26 @@ public class Cycle {
 
 
 
-
+// Method to detect cycle in an undirected graph using DFS
+// This method takes a graph as input and returns true if there is a cycle in the graph, otherwise false.
     public static boolean hasCycleUndirected(Graph graph) {
-        boolean[] visited = new boolean[graph.vertices];
+        boolean[] visited = new boolean[graph.vertices]; // Create a boolean array to keep track of visited nodes
         for (int i = 0; i < graph.vertices; i++) {
-            if (!visited[i]) {
-                if (dfsUndirected(graph, i, visited, -1)) {
+            if (!visited[i]) { // If the node has not been visited, perform DFS from that node
+                if (dfsUndirected(graph, i, visited, -1)) {  // If a cycle is detected during DFS, return true
                     return true;
                 }
             }
         }
         return false;
     }
+
+// Helper method to perform DFS for cycle detection in an undirected graph
+// This method takes the graph, the current vertex, the visited array, and the parent vertex as parameters. 
+// It marks the current vertex as visited and iterates through its neighbors. 
+// If a neighbor has not been visited, it recursively calls itself with the neighbor as the current vertex and the current vertex as the parent. 
+// If a neighbor has been visited and is not the parent, it means there is a cycle, and the method returns true. 
+// If no cycle is detected after checking all neighbors, it returns false.
 
     private static boolean dfsUndirected(Graph graph, int vertex, boolean[] visited, int parent) {
         visited[vertex] = true;

@@ -51,6 +51,14 @@ public class CloneGraph {
         return cloneGraphHelper(node, map);
     }
 
+    // Helper method to perform the cloning using DFS
+    // This method takes a node and the mapping of original nodes to their clones as parameters. 
+    // It checks if the node has already been cloned (i.e., if it exists in the map). 
+    // If it has, it returns the cloned node from the map. 
+    // If it hasn't, it creates a new clone of the node, adds it to the map, 
+    // and then recursively clones all of its neighbors, 
+    // adding the cloned neighbors to the neighbors list of the cloned node. 
+    // Finally, it returns the cloned node.
     private static Node cloneGraphHelper(Node node, Map<Node, Node> map) {
       
         
