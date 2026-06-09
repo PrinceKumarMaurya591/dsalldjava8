@@ -33,6 +33,11 @@ public class MaxAreaOfIsland {
         // Expected: 6
     }
 
+
+    // Method to find the maximum area of an island in the grid
+    // This method iterates through each cell in the grid, and when it finds a '1',
+    // it calls the dfs method to calculate the area of that island and updates the maximum area found.
+
     public static int maxAreaOfIsland(int[][] grid) {
         if (grid == null || grid.length == 0) return 0;
         int maxArea = 0;
@@ -50,6 +55,8 @@ public class MaxAreaOfIsland {
         return maxArea;
     }
 
+
+
     private static int dfs(int[][] grid, int i, int j) {
         // Boundary check and water check
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == 0) {
@@ -57,7 +64,8 @@ public class MaxAreaOfIsland {
         }
 
         // Mark as visited (sink the land)
-        grid[i][j] = 0;
+        // This is done to avoid counting the same land cell multiple times during the DFS traversal.
+        grid[i][j] = 0; 
 
         // Count current cell + explore 4 directions
         int area = 1;
